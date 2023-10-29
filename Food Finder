@@ -1,0 +1,102 @@
+echo "# Food-Finder" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Kole-Baker/Food-Finder.git
+git push -u origin main
+
+//Food Finder
+//Created By Kole Baker, Joey Dunphey, and Atherton Fox
+
+
+//Loading Page
+setTimeout(function() { setScreen("SignUpPage");},500);
+
+
+//SignUp Page
+onEvent("SignUp_EnterButton", "click", function() { setScreen("HomePage");});
+
+
+//HomePage
+onEvent("HomePage_Restuarants", "click", function() {open("https://www.google.com/maps/search/restuarants+near+me/@44.6448275,-85.9311044,12z/data=!3m1!4b1?entry=ttu");});
+onEvent("HomePage_Recipes", "click", function() {setScreen("RecipesPage");});
+onEvent("HomePage_Cravings", "click", function() {setScreen("CravingsPage1");});onEvent("RecipesPage_Sandwhiches", "click", function() {open("https://www.tasteofhome.com/collection/sandwich-ideas/");}); 
+onEvent("HomePage_Restuarants", "click", function() {open("https://www.google.com/maps/search/reataurants+near+me/@44.4353544,-85.9243659,9.31z?entry=ttu");});
+
+
+//RecipesPage
+onEvent("RecipesPage_Sandwhiches", "click", function() {open("https://www.tasteofhome.com/collection/sandwich-ideas");});
+onEvent("RecipesPage_Pasta", "click", function() {open("https://www.tasteofhome.com/collection/incredible-5-star-pasta-recipes");});
+onEvent("RecipesPage_Appetizers", "click", function() {open("https://www.tasteofhome.com/collection/awesome-ideas-appetizer-recipes/");});
+onEvent("RecipesPage_Starters", "click", function() {open("https://www.olivemagazine.com/recipes/collection/best-ever-starter-recipes");});
+onEvent("RecipesPage_Salads", "click", function() {open("https://www.allrecipes.com/recipes/96/salad");});
+onEvent("RecipesPage_Burgers", "click", function() {open("https://www.tasteofhome.com/collection/best-hamburger-recipes");});
+onEvent("RecipesPage_Entrees", "click", function() {open("https://www.tasteofhome.com/collection/easy-dinner-ideas");});
+onEvent("RecipesPage_Deserts", "click", function() {open("https://www.tasteofhome.com/collection/easy-dessert-ideas");});
+onEvent("RecipesPage_Seafood", "click", function() {open("https://www.tasteofhome.com/collection/seafood-recipes-for-dinner");});
+onEvent("RecipesPage_Steak", "click", function() {open("https://www.tasteofhome.com/collection/super-steak-recipes");});
+onEvent("RecipesPage_Sushi", "click", function() {open("https://www.allrecipes.com/article/how-to-make-sushi-rolls");});
+onEvent("RecipesPage_Fish", "click", function() {open("https://www.tasteofhome.com/collection/easy-fish-recipes-ready-in-30-minutes");});
+onEvent("RecipesPage_Chicken", "click", function() {open("https://www.allrecipes.com/recipes/201/meat-and-poultry/chicken");});
+onEvent("RecipesPage_Rice", "click", function() {open("https://www.allrecipes.com/gallery/best-rice-recipes");});
+onEvent("RecipesPage_Bacon", "click", function() {open("https://www.allrecipes.com/recipes/669/meat-and-poultry/pork/bacon");});
+onEvent("RecipesPage_Dips", "click", function() {open("https://www.allrecipes.com/gallery/easy-dip-recipes");});
+onEvent("RecipesPage_Home", "click", function() {setScreen("HomePage");});
+
+
+//CravingsPages
+onEvent("CravingsPage1_AppetizersButton", "click", function() {setScreen("CravingsPage2");});
+onEvent("CravingsPage1_SaladsButton", "click", function() {setScreen("CravingsPage2");});
+onEvent("CravingsPage1_Skip", "click", function() {setScreen("CravingsPage2");});
+onEvent("CravingsPage1_Home", "click", function() {setScreen("HomePage");});
+onEvent("CravingsPage2_PastaButton", "click", function() {setScreen("CravingsPage3");});
+onEvent("CravingsPage2_TacosButton", "click", function() {setScreen("CravingsPage3");});
+onEvent("CravingsPage2_Skip", "click", function() {setScreen("CravingsPage3");});
+onEvent("CravingsPage2_Home", "click", function() {setScreen("HomePage");});
+onEvent("CravingsPage3_SeafoodButton", "click", function() {setScreen("CravingsPage4");});
+onEvent("CravingsPage3_SushiButton", "click", function() {setScreen("CravingsPage4");});
+onEvent("CravingsPage3_Skip", "click", function() {setScreen("CravingsPage4");});
+onEvent("CravingsPage3_Home", "click", function() {setScreen("HomePage");});
+onEvent("CravingsPage4_DessertsButton", "click", function() {setScreen("CravingsPage5");});
+onEvent("CravingsPage4_SnacksButton", "click", function() {setScreen("CravingsPage5");});
+onEvent("CravingsPage4_Skip", "click", function() {setScreen("CravingsPage5");});
+onEvent("CravingsPage4_Home", "click", function() {setScreen("HomePage");});
+onEvent("CravingsPage5_BaconButton", "click", function() {setScreen("CravingsPage6");});
+onEvent("CravingsPage5_ChickenButton", "click", function() {setScreen("CravingsPage6");});
+onEvent("CravingsPage5_Skip", "click", function() {setScreen("CravingsPage6");});
+onEvent("CravingsPage5_Home", "click", function() {setScreen("HomePage");});
+onEvent("CravingsPage6_FishButton", "click", function() {setScreen("CravingsPage7");});
+onEvent("CravingsPage6_SteakButton", "click", function() {setScreen("CravingsPage7");});
+onEvent("CravingsPage6_Skip", "click", function() {setScreen("CravingsPage7");});
+onEvent("CravingsPage6_Home", "click", function() {setScreen("HomePage");});
+
+onEvent("CravingsPage7_RiceButton", "click", function() {setScreen("CravingsPage_Final");
+  var INDEX = 0;
+  var LIST = ["Sandwhiches", "Salads", "Burgers", "Seafood", "Pasta", "Steak"];
+  INDEX = randomNumber(0,LIST.length - 1);
+  updateScreen();
+  function updateScreen(){
+    setProperty("CravingsPage_Final_Textbox2","text",LIST[INDEX])}});
+
+onEvent("CravingsPage7_ChipsAndDipButton", "click", function() {setScreen("CravingsPage_Final");
+  var Index = 0;
+  var List = ["Sandwhiches", "Salads", "Burgers", "Seafood", "Pasta", "Steak"];
+  Index = randomNumber(0,List.length - 1);
+  updateScreen();
+  function updateScreen(){
+    setProperty("CravingsPage_Final_Textbox2","text",List[Index])}});
+
+onEvent("CravingsPage7_Skip", "click", function() {setScreen("CravingsPage_Final");
+  var index = 0;
+  var list = ["Sandwhiches", "Salads", "Burgers", "Seafood", "Pasta", "Steak"];
+  index = randomNumber(0,list.length - 1);
+  updateScreen();
+  function updateScreen(){
+    setProperty("CravingsPage_Final_Textbox2","text",list[index])}});
+onEvent("CravingsPage7_Home", "click", function() {setScreen("HomePage");});
+onEvent("CravingsPage_Final_Home", "click", function() {setScreen("HomePage");});
+onEvent("CravingsPage_Final_RecipeButton", "click", function() {setScreen("RecipesPage");});
+
+
+//(^_^)
